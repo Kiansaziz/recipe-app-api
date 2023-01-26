@@ -1,0 +1,23 @@
+[build docker]
+-app 
+-dockerignore 
+-Docker-file 
+-requirement.txt 
+-requirement.dev.txt 
+cmd : docker build .
+
+[install compose build]
+-docker-compose.yml
+docker-compose build
+
+[run flake8]
+creaet folder 
+app/.flake8
+docker-compose run --rm app sh -c "flake8"
+
+[create django ]
+auto create folder inside folder /app
+docker-compose run --rm app -sh -c "django-admin startproject app."
+
+[run django]
+docker-compose up
